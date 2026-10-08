@@ -3,6 +3,10 @@ LGBT/
 *.zip
 *.tsv
 
+# Dữ liệu/thủ công cụ HOLD cục bộ
+Homophobia-Transphobia-Detection/
+lgbtia-/
+
 # Trọng số / artifact từ notebook
 weights/
 *.pt
@@ -12,3 +16,7 @@ stereoqueer_val_predictions.csv
 # Python
 __pycache__/
 .ipynb_checkpoints/
+
+# Secrets — never commit
+.env
+.env.*
