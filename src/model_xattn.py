@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """Two-tower encoder-decoder classifier for Task A (stereotype yes/no).
 
 The video context (title + description) is the *encoder memory* and the comment is

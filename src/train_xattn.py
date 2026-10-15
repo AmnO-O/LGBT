@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """Train the two-tower encoder-decoder classifier (see model_xattn.py).
 
 Same data pipeline, split, labels, metrics and early-stopping conventions as

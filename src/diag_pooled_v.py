@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """pooled_v diagnostics: does the head use the shortcut, and what does it cost?
 
 Runs on a trained checkpoint only - no retraining, a handful of forward passes:
@@ -345,7 +344,6 @@ def main():
         print('  Compare its section C/D against a with-pooled_v checkpoint instead.')
     else:
         pc = torch.from_numpy(res['pooled_c'])
-        pv = torch.from_numpy(res['pooled_v'])
         conds = {
             'as trained': res['pooled_v'],
             'pooled_v := 0': np.zeros_like(res['pooled_v']),
@@ -379,7 +377,7 @@ def main():
     print('  cross-attn entropy per layer (bits)  ' + ' '.join(f'{e:.3f}' for e in ent) +
           f' | mean {np.mean(ent):.3f} (ceiling log2(mean valid video tokens '
           f'{res["mean_video_tokens"]:.0f}) = {math.log2(max(res["mean_video_tokens"], 2.0)):.2f})')
-    print(f'  cross-attn top-1 weight per layer    ' +
+    print('  cross-attn top-1 weight per layer    ' +
           ' '.join(f'{t:.3f}' for t in res['top1_weight']) +
           f' | mean {np.mean(res["top1_weight"]):.3f}')
     print(f'  comment-pool entropy {res["pool_entropy_bits"]:.3f} bits')
